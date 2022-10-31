@@ -1,8 +1,4 @@
 const Cache = require('../src/Consumers/Cache')
-const DatabaseCacheService = require('../src/Services/DatabaseCacheService')
-const FileCacheService = require('../src/Services/FileCacheService')
-const RedisCacheService = require('../src/Services/RedisCacheService')
-const MemCacheService = require('../src/Services/MemCacheService')
 
 class CacheLoader {
   private cacheDriver = 'redis'
@@ -17,24 +13,10 @@ class CacheLoader {
     const driver: string = this._getConfig('driver')
     let cache: any
     switch (driver.toLowerCase()) {
-      case 'memcache':
-        // Load MemCacheService
-        cache = new Cache(new MemCacheService(this.app))
-        break
-
       case 'redis':
         // Load RedisCacheService
+        const RedisCacheService = require('../src/Services/RedisCacheService')
         cache = new Cache(new RedisCacheService(this.app))
-        break
-
-      case 'database':
-        // Load DatabaseCacheService
-        cache = new Cache(new DatabaseCacheService(this.app))
-        break
-
-      default:
-        // Load FileCacheService
-        cache = new Cache(new FileCacheService(this.app))
         break
     }
     return cache

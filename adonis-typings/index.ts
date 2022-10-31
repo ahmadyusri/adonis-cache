@@ -1,5 +1,8 @@
 /*
- * @Kaperskyguru/adonis-cache
+ * @ahmadyusri/adonis-cache
+ *
+ * Ahmad Yusri <yusriahmad2@gmail.com>
+ * Costumization Package from [Kaperskyguru/adonis-cache]
  *
  * (c) Solomon Eseme <kaperskyguru@gmail.com>
  *
@@ -7,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-declare module '@ioc:Kaperskyguru/Adonis-Cache' {
+declare module '@ioc:AhmadYusri/Adonis-Cache' {
   /**
    * Shape of adonis-cache config.
    */

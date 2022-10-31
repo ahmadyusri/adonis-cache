@@ -1,6 +1,6 @@
 {
-  "name": "@kaperskyguru/adonis-cache",
-  "version": "2.1.1",
+  "name": "@ahmadyusri/adonis-cache",
+  "version": "2.1.4",
   "description": "Adonis Cache Package",
   "main": "build/providers/CacheProvider",
   "scripts": {
@@ -17,14 +17,14 @@
     "commit": "git-cz",
     "release": "np",
     "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json Kaperskyguru/adonis-cache"
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json AhmadYusri/adonis-cache"
   },
   "keywords": [
     "adonis",
     "adonisjs",
     "cache"
   ],
-  "homepage": "https://github.com/kaperskyguru/adonis-cache#readme",
+  "homepage": "https://github.com/ahmadyusri/adonis-cache#readme",
   "author": "Solomon Eseme",
   "license": "MIT",
   "devDependencies": {
@@ -70,10 +70,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kaperskyguru/kap-adonis-cache.git"
+    "url": "git+https://github.com/ahmadyusri/adonis-cache.git"
   },
   "bugs": {
-    "url": "https://github.com/Kaperskyguru/kap-adonis-cache/issues"
+    "url": "https://github.com/ahmadyusri/adonis-cache/issues"
   },
   "config": {
     "commitizen": {
@@ -116,15 +116,12 @@
   "adonisjs": {
     "instructions": "./build/instructions.js",
     "instructionsMd": "./build/instructions.md",
-    "types": "@kaperskyguru/adonis-cache",
+    "types": "@ahmadyusri/adonis-cache",
     "providers": [
-      "@kaperskyguru/adonis-cache"
+      "@ahmadyusri/adonis-cache"
     ],
     "templates": {
       "config": [
-        "cache.txt"
-      ],
-      "contract": [
         "cache.txt"
       ]
     }
@@ -137,8 +134,5 @@
     "@adonisjs/redis": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "fs": "^0.0.1-security"
   }
 }

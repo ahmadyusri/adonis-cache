@@ -26,11 +26,7 @@ class Cache implements CacheInterface {
   }
 
   public async delete(name: string): Promise<Boolean> {
-    if (await this.has(name)) {
-      await this.cacheService.delete(name)
-      return true
-    }
-    return false
+    return await this.cacheService.delete(name)
   }
 
   public async update(name: string, data: any, minutes: number = 0): Promise<any> {

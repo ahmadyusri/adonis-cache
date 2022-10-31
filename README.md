@@ -1,6 +1,9 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+# Table of contents
+Costumization Package from [Kaperskyguru/adonis-cache](https://github.com/Kaperskyguru/adonis-cache)
+
 ## Table of contents
 
 - [Adonis Cache](#adonis-cache)
@@ -22,15 +25,15 @@ This packages makes it seamless to implement any Caching strategy in AdonisJS 5 
 Install the package using either npm or yarn:
 
 ```bash
-npm i @kaperskyguru/adonis-cache
+npm i @ahmadyusri/adonis-cache
 # or
-yarn add @kaperskyguru/adonis-cache
+yarn add @ahmadyusri/adonis-cache
 ```
 
 Then, configure the package using the `invoke` command:
 
 ```bash
-node ace invoke @kaperskyguru/adonis-cache
+node ace invoke @ahmadyusri/adonis-cache
 ```
 
 This package works exactly the way Laravel Cache package works with ease of use and effortless to set up.
@@ -38,14 +41,14 @@ This package works exactly the way Laravel Cache package works with ease of use 
 ```txt
 // .env
 
-CACHE_DRIVER=file // defaults to FILE
+CACHE_DRIVER=redis // defaults to FILE
 
 ```
 
 ## Usage
 
 ```ts
-import Cache from '@ioc:Kaperskyguru/Adonis-cache'
+import Cache from '@ioc:AhmadYusri/Adonis-cache'
 
 let posts = await Cache.remember('_posts_', 60, async function () {
   return await Post.all()

@@ -6,7 +6,6 @@ import {
 } from '@ioc:Adonis/Addons/Redis'
 
 class RedisCache implements EngineInterface {
-  // private defaultMinutes = 60;
   private redis: RedisManagerContract
   private config: any
 
@@ -76,7 +75,21 @@ class RedisCache implements EngineInterface {
   }
 
   public async delete(name: string): Promise<Boolean> {
-    await this.getRedisConnection().del(name)
+    const config = this.config
+    const connection = config?.connection
+    const connections = config?.connections
+    const keyPrefix = connections[connection]?.keyPrefix ?? ''
+
+    const keys = await this.getRedisConnection().keys(`${keyPrefix}${name}`)
+    if (keys.length === 0) {
+      return false
+    }
+
+    await Promise.all(
+      keys.map(async (key) => {
+        await this.getRedisConnection().del(key.replace(keyPrefix, ''))
+      })
+    )
     return true
   }
 
